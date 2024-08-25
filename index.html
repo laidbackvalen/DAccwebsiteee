@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enter Your Credentials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 500px;
+            margin: auto;
+            padding: 20px;
+            background-color: #f8f9fa;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+            width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input[type="text"],
+        input[type="tel"],
+        input[type="email"],        
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        .error {
+            color: red;
+            margin-top: 5px;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-delete {
+            background-color: #dc3545;
+            display:block;
+            margin:20px auto;
+        }
+
+        .btn-delete:hover {
+            background-color: #c82333;
+        }
+
+        .message {
+            font-size: 20px;
+            color: #007bff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    
+    <form id="credentialsForm" action="send_email.php" method="post">
+        <h1>Enter Your Credentials</h1>
+        <div class="form-group">
+            <label for="countryCode">Country Dialing Code:</label>
+             <select id="countryCode" name="countryCode" required>
+                <option value="" disabled selected>Select your country code</option>
+                <!-- List of country dialing codes -->
+                <option value="+93">+93 (Afghanistan)</option>
+                <option value="+355">+355 (Albania)</option>
+                <option value="+213">+213 (Algeria)</option>
+                <option value="+1684">+1684 (American Samoa)</option>
+                <option value="+376">+376 (Andorra)</option>
+                <option value="+244">+244 (Angola)</option>
+                <option value="+1264">+1264 (Anguilla)</option>
+                <option value="+1268">+1268 (Antigua and Barbuda)</option>
+                <option value="+54">+54 (Argentina)</option>
+                <option value="+374">+374 (Armenia)</option>
+                <option value="+297">+297 (Aruba)</option>
+                <option value="+61">+61 (Australia)</option>
+                <option value="+43">+43 (Austria)</option>
+                <option value="+994">+994 (Azerbaijan)</option>
+                <option value="+1242">+1242 (Bahamas)</option>
+                <option value="+973">+973 (Bahrain)</option>
+                <option value="+880">+880 (Bangladesh)</option>
+                <option value="+1246">+1246 (Barbados)</option>
+                <option value="+375">+375 (Belarus)</option>
+                <option value="+32">+32 (Belgium)</option>
+                <option value="+501">+501 (Belize)</option>
+                <option value="+229">+229 (Benin)</option>
+                <option value="+1441">+1441 (Bermuda)</option>
+                <option value="+975">+975 (Bhutan)</option>
+                <option value="+591">+591 (Bolivia)</option>
+                <option value="+387">+387 (Bosnia and Herzegovina)</option>
+                <option value="+267">+267 (Botswana)</option>
+                <option value="+55">+55 (Brazil)</option>
+                <option value="+246">+246 (British Indian Ocean Territory)</option>
+                <option value="+673">+673 (Brunei)</option>
+                <option value="+359">+359 (Bulgaria)</option>
+                <option value="+226">+226 (Burkina Faso)</option>
+                <option value="+257">+257 (Burundi)</option>
+                <option value="+855">+855 (Cambodia)</option>
+                <option value="+237">+237 (Cameroon)</option>
+                <option value="+1">+1 (Canada)</option>
+                <option value="+238">+238 (Cape Verde)</option>
+                <option value="+1345">+1345 (Cayman Islands)</option>
+                <option value="+236">+236 (Central African Republic)</option>
+                <option value="+235">+235 (Chad)</option>
+                <option value="+56">+56 (Chile)</option>
+                <option value="+86">+86 (China)</option>
+                <option value="+61">+61 (Christmas Island)</option>
+                <option value="+57">+57 (Colombia)</option>
+                <option value="+269">+269 (Comoros)</option>
+                <option value="+242">+242 (Congo)</option>
+                <option value="+243">+243 (Congo, Democratic Republic of the)</option>
+                <option value="+682">+682 (Cook Islands)</option>
+                <option value="+506">+506 (Costa Rica)</option>
+                <option value="+225">+225 (Côte d'Ivoire)</option>
+                <option value="+385">+385 (Croatia)</option>
+                <option value="+53">+53 (Cuba)</option>
+                <option value="+599">+599 (Curaçao)</option>
+                <option value="+357">+357 (Cyprus)</option>
+                <option value="+420">+420 (Czech Republic)</option>
+                <option value="+45">+45 (Denmark)</option>
+                <option value="+253">+253 (Djibouti)</option>
+                <option value="+1767">+1767 (Dominica)</option>
+                <option value="+1809">+1809 (Dominican Republic)</option>
+                <option value="+1829">+1829 (Dominican Republic)</option>
+                <option value="+1849">+1849 (Dominican Republic)</option>
+                <option value="+593">+593 (Ecuador)</option>
+                <option value="+20">+20 (Egypt)</option>
+                <option value="+503">+503 (El Salvador)</option>
+                <option value="+240">+240 (Equatorial Guinea)</option>
+                <option value="+291">+291 (Eritrea)</option>
+                <option value="+372">+372 (Estonia)</option>
+                <option value="+251">+251 (Ethiopia)</option>
+                <option value="+500">+500 (Falkland Islands)</option>
+                <option value="+298">+298 (Faroe Islands)</option>
+                <option value="+679">+679 (Fiji)</option>
+                <option value="+358">+358 (Finland)</option>
+                <option value="+33">+33 (France)</option>
+                <option value="+594">+594 (French Guiana)</option>
+                <option value="+689">+689 (French Polynesia)</option>
+                <option value="+241">+241 (Gabon)</option>
+                <option value="+220">+220 (Gambia)</option>
+                <option value="+995">+995 (Georgia)</option>
+                <option value="+49">+49 (Germany)</option>
+                <option value="+233">+233 (Ghana)</option>
+                <option value="+350">+350 (Gibraltar)</option>
+                <option value="+30">+30 (Greece)</option>
+                <option value="+299">+299 (Greenland)</option>
+                <option value="+1473">+1473 (Grenada)</option>
+                <option value="+590">+590 (Guadeloupe)</option>
+                <option value="+1671">+1671 (Guam)</option>
+                <option value="+502">+502 (Guatemala)</option>
+                <option value="+224">+224 (Guinea)</option>
+                <option value="+245">+245 (Guinea-Bissau)</option>
+                <option value="+592">+592 (Guyana)</option>
+                <option value="+509">+509 (Haiti)</option>
+                <option value="+504">+504 (Honduras)</option>
+                <option value="+852">+852 (Hong Kong)</option>
+                <option value="+36">+36 (Hungary)</option>
+                <option value="+354">+354 (Iceland)</option>
+                <option value="+91">+91 (India)</option>
+                <option value="+62">+62 (Indonesia)</option>
+                <option value="+98">+98 (Iran)</option>
+                <option value="+964">+964 (Iraq)</option>
+                <option value="+353">+353 (Ireland)</option>
+                <option value="+972">+972 (Israel)</option>
+                </select>
+        </div>
+        <div class="form-group">
+            <label for="phoneNumber">Phone Number:</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+        </div> <div class="form-group">
+            <label for="email">Email-ID:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email-id" required>
+        </div>
+       
+        <div id="error" class="error"></div>
+        <button type="button" class="btn-delete" id="deleteAccountButton">Delete Account</button>
+    </form>
+    <div id="processingMessage" class="message hidden">
+        We have registered your request for account deletion. We are working on your query; please wait for some time.<br><br>
+        <p style="color:black;display:inline-block;">If the process takes more than a few hours, do contact us at the email below:</p>
+        <p><a id="supportEmail" href="#">valen.patel1@gmail.com</a></p>
+    </div>
+
+    <script>
+        document.getElementById('deleteAccountButton').addEventListener('click', function() {
+            var countryCode = document.getElementById('countryCode').value;
+            var phoneNumber = document.getElementById('phoneNumber').value;
+            var email = document.getElementById('email').value;
+            var errorElement = document.getElementById('error');
+            var supportEmail = document.getElementById('supportEmail');
+
+            // Validate inputs
+            if (!countryCode || !phoneNumber || !email) {
+                errorElement.textContent = 'All fields are required.';
+            } else if (!/^\d+$/.test(phoneNumber)) {
+                errorElement.textContent = 'Phone number must contain only digits.';
+            } else if (!/\S+@\S+\.\S+/.test(email)) {
+                errorElement.textContent = 'Please enter a valid email address.';
+            } else {
+                errorElement.textContent = '';
+                // Hide the form and show the processing message
+                document.getElementById('credentialsForm').classList.add('hidden');
+                document.getElementById('processingMessage').classList.remove('hidden');
+                
+                // Set the mailto link for the email support address
+                supportEmail.href = `mailto:valen.patel1@gmail.com?subject=Account Deletion Request&body=Hello, I am requesting to delete my account. My phone number is ${phoneNumber} and my email-id is ${email}.`;
+            }
+        });
+    </script>
+</body>
+</html>
